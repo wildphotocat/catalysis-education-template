@@ -1,0 +1,279 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{newtxtext,newtxmath}
+
+% ---- 1. GEOMETRY & LAYOUT ----
+\usepackage[top=2.8cm, bottom=2cm, left=1.5cm, right=1.5cm, headheight=2cm]{geometry}
+\usepackage{microtype}
+\sloppy
+\usepackage{lastpage}
+\usepackage{caption}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{multicol}
+\setlength{\columnsep}{1.2em}
+
+% ---- 2. FONTS ----
+\usepackage{mathpazo} % Palatino (Body)
+\usepackage[scaled=0.92]{helvet} % Helvetica (Headings)
+\usepackage{courier} % Courier (Code)
+
+% ---- 3. COLORS ----
+\usepackage{xcolor}
+\definecolor{catalysisblue}{RGB}{0, 51, 102}
+\definecolor{accentgray}{RGB}{100, 100, 100}
+
+% ---- 4. SECTIONS STYLING ----
+\usepackage{titlesec}
+\titleformat{\section}{\color{catalysisblue}\large\sffamily\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\color{black}\normalsize\sffamily\bfseries}{\thesubsection}{1em}{}
+
+% ---- 5. IMAGES ----
+\usepackage{graphicx}
+\usepackage[font={small,sf,bf}, labelfont={color=catalysisblue}]{caption}
+
+% ---- 6. BIBLIOGRAPHY (ACS STYLE) ----
+\usepackage[numbers,super,sort&compress]{natbib}
+\bibliographystyle{unsrtnat}
+
+% ---- 7. LINKS ----
+\usepackage{hyperref}
+\hypersetup{
+	bookmarksopen=true,
+	bookmarksnumbered=true,
+	pdfstartview=FitH,
+	colorlinks=true,
+	linkcolor=catalysisblue,
+	urlcolor=catalysisblue,
+	citecolor=catalysisblue
+}
+
+% ---- 8. METADATA VARIABLES ----
+\usepackage{fancyhdr}
+
+\makeatletter % START: Allow use of @ variables
+
+% Define variables
+\newcommand{\articletype}[1]{\def\@articletype{#1}}
+\newcommand{\received}[1]{\def\@received{#1}}
+\newcommand{\revised}[1]{\def\@revised{#1}}
+\newcommand{\affiliation}[1]{\def\@affiliation{#1}}
+\newcommand{\fulladdress}[1]{\def\@fulladdress{#1}}
+\newcommand{\correspondencename}[1]{\def\@correspondencename{#1}}
+\newcommand{\correspondenceemail}[1]{\def\@correspondenceemail{#1}}
+
+% ---- CUSTOM TITLE BLOCK ----
+\renewcommand{\maketitle}{
+	\thispagestyle{plain}
+	\begin{center}
+		% Article Type
+		{\sffamily \bfseries \footnotesize \color{white} \colorbox{catalysisblue}{\,\MakeUppercase{\@articletype}\,} \par}
+		\vspace{0.3cm}
+		
+		% Title
+		{\LARGE \sffamily \bfseries \color{catalysisblue} \@title \par}
+		\vspace{0.2cm}
+		
+		% Author
+		{\Large \bfseries \@author \par}
+		\vspace{0.1cm}
+		
+		% Affiliation
+		{\small \itshape \@affiliation \par}
+		{\small \itshape \@fulladdress \par}
+		
+		% Correspondence
+		\vspace{0.1cm}
+		{\small \sffamily \textbf{Correspondence to:} \@correspondencename \par}
+		{\small \sffamily \textbf{Email:} \ttfamily \color{catalysisblue} \@correspondenceemail \par}
+		
+		\vspace{0.2cm}
+		
+		% Dates
+		{\footnotesize \sffamily \color{accentgray} Received: \@received \quad | \quad Revised: \@revised \par}
+		
+		\vspace{0.3cm}
+		
+		% Bottom Rule
+		\hrule height 0.5pt \color{accentgray}
+		\vspace{0.3cm}
+	\end{center}
+}
+
+\makeatother % END: Stop using @ variables
+
+% Set default page style
+\pagestyle{fancy}
+\fancyhf{} % Clear all
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{accentgray}\leaders\hrule height \headrulewidth\hfill}}
+\lhead{\sffamily \small \color{catalysisblue} Catalysis Education Newsletter}
+\rhead{\sffamily \small Page \thepage}
+\renewcommand{\footrulewidth}{0pt}
+
+% =========================================
+% TEMPLATE COPYRIGHT & LICENSE
+% =========================================
+% This LaTeX template is provided by:
+% Catalysis Education Newsletter
+% National Centre for Catalysis Research (NCCR) Alumni
+% Indian Institute of Technology Madras
+%
+% Copyright (c) 2026 Professor Balasubramanian Viswanathan
+%
+% This work is licensed under the Creative Commons 
+% Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+%
+% Under this license, users are permitted to copy, redistribute, 
+% remix, transform, and build upon the material for non-commercial 
+% purposes only, provided that appropriate credit is given to the 
+% original author(s) and the source.
+%
+% To view a copy of this license, visit:
+% http://creativecommons.org/licenses/by-nc/4.0/
+%
+% =========================================
+
+% =========================================
+% DOCUMENT CONTENT STARTS HERE
+% =========================================
+
+% FILL IN YOUR ARTICLE METADATA
+\articletype{ARTICLE TYPE} % e.g., REVIEW, RESEARCH, TUTORIAL, PERSPECTIVE
+\received{Month Day, Year}
+\revised{Month Day, Year}
+
+\title{Your Article Title Here}
+\author{Author Name(s)}
+\affiliation{Department or Research Group}
+\fulladdress{Institution, City, Country}
+\correspondencename{Corresponding Author Name}
+\correspondenceemail{email@example.com}
+
+\begin{document}
+	
+	\twocolumn[
+	\maketitle
+	
+	\begin{quotation}
+		\noindent \textbf{\sffamily \color{black}
+			Write your abstract or key message here. This should be a concise summary of your article, typically 150-250 words. Explain the main topic, approach, and key findings or insights. This section will appear in a highlighted box at the beginning of your article.
+		}
+	\end{quotation}
+	
+	\vspace{0.3cm}]
+	
+	\section{Introduction}
+	
+	Begin your article here. Introduce the topic, provide context, and explain why this work is important for catalysis education. You can cite references like this\cite{example2024}.
+	
+	Use this template for educational articles, reviews, tutorials, perspectives, or teaching materials related to catalysis and surface science.
+	
+	\section{Main Content}
+	
+	Organize your content into logical sections. Each section should have a clear purpose and flow naturally from the previous one.
+	
+	\subsection{Subsections}
+	
+	You can use subsections to organize complex topics. Use them to break down your content into manageable parts.
+	
+	\subsection{Including Equations}
+	
+	You can include mathematical equations. For inline equations, use \$E = mc$^2$. For display equations:
+	
+	\begin{equation}
+		\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+	\end{equation}
+	
+	For important equations, you can highlight them:
+	
+	\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, boxrule=0.8pt, arc=3pt]
+		\begin{equation}
+			\Delta G = \Delta H - T\Delta S
+		\end{equation}
+	\end{tcolorbox}
+	
+	\subsection{Including Figures}
+	
+	Include figures to illustrate your points:
+	
+	\begin{figure}[h]
+		\centering
+		% \includegraphics[width=0.8\linewidth]{your_figure.pdf}
+		\fbox{\parbox{0.8\linewidth}{\centering\vspace{2cm}[Place your figure here]\vspace{2cm}}}
+		\caption{Write a descriptive caption for your figure. Explain what the figure shows and why it is important.}
+		\label{fig:example}
+	\end{figure}
+	
+	You can reference figures in the text like this: As shown in Figure~\ref{fig:example}, ...
+	
+	\subsection{Including Tables}
+	
+	Tables are useful for presenting data:
+	
+	\begin{table}[h]
+		\centering
+		\caption{Example table showing sample data}
+		\label{tab:example}
+		\begin{tabular}{lcc}
+			\hline
+			\textbf{Parameter} & \textbf{Value 1} & \textbf{Value 2} \\
+			\hline
+			Temperature (°C) & 25 & 100 \\
+			Pressure (bar) & 1 & 10 \\
+			Yield (\%) & 65 & 85 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\section{Discussion}
+	
+	Discuss the implications of your work. What are the key takeaways? How does this contribute to catalysis education?
+	
+	\section{Conclusion}
+	
+	Summarize the main points of your article. What should readers remember? What are the practical implications?
+	
+	\section*{Acknowledgments}
+	
+	If you used AI tools (such as Claude, ChatGPT, or others) in preparing your manuscript, please acknowledge them here. For example:
+	
+	\textit{The author acknowledges the use of [AI Tool Name] for [specific purpose, e.g., organizing notes, editing, literature synthesis].}
+	
+	You can also acknowledge funding sources, colleagues who provided feedback, or institutions that supported your work.
+	
+	\section*{Disclaimer}
+	
+	The views, opinions, and interpretations expressed in this article are solely those of the author(s) and do not necessarily reflect the official position or views of Catalysis Education Newsletter.
+	
+	% =========================================
+	% BIBLIOGRAPHY
+	% =========================================
+	
+	\begin{thebibliography}{99}
+		
+		\bibitem{example2024}
+		Author, A.; Author, B.
+		\href{https://doi.org/10.xxxx/xxxxx}{Article Title}.
+		\textit{Journal Name}
+		\textbf{Year}, \textit{Volume}, Pages.
+		
+		% Add more references as needed
+		% Always include DOI links when available
+		
+	\end{thebibliography}
+	
+	\section*{Submission Information}
+	
+	\textbf{How to Submit:}
+	\begin{itemize}
+		\item Email your completed manuscript to: \texttt{catalysiseducation@gmail.com}
+		\item Include all figure files separately (PDF or high-resolution images preferred)
+		\item Provide complete citations with DOI links
+		\item Clearly acknowledge any use of AI tools
+	\end{itemize}
+	
+	\textbf{Questions?} Contact us at \texttt{catalysiseducation@gmail.com}
+	
+\end{document}
