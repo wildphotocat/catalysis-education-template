@@ -58,10 +58,6 @@ National Centre for Catalysis Research (NCCR) Alumni
 Indian Institute of Technology Madras, 2026
 ```
 ```
-
-### Step 3: Create the LICENSE File
-
-Create a file called `LICENSE` (no extension) with this content:
 ```
 Creative Commons Attribution-NonCommercial 4.0 International License
 
