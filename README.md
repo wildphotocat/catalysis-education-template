@@ -57,8 +57,6 @@ Professor Balasubramanian Viswanathan
 National Centre for Catalysis Research (NCCR) Alumni
 Indian Institute of Technology Madras, 2026
 ```
-```
-```
 Creative Commons Attribution-NonCommercial 4.0 International License
 
 Copyright (c) 2026 Professor Balasubramanian Viswanathan
